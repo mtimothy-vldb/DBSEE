@@ -63,39 +63,39 @@ DBSee does **not** access any data held in Teradata outside of the data dictiona
 
 The DBSee scripts take between a few seconds to a few minutes each to execute, even against a busy system. 
 
-[dbsee_permspace.sql](https://github.com/VLDB-Solutions/DBSEE/blob/master/dbsee_permspace.sql) -- available space within each database
+**[dbsee_permspace.sql]**(https://github.com/VLDB-Solutions/DBSEE/blob/master/dbsee_permspace.sql) -- available space within each database
 
-A general rule is to keep the overall percent used below 65%, typically this ensures there is enough free space. If you find the total space used is above the recommended 65% there are a number of options. 
+A general rule is to keep the overall percent used below 65%; typically this ensures that there is enough free space. If you find that the total space used is above the recommended 65%, there are a number of options:
 
-1. Increase the database size from dbc / owner freespace
-1. Explore table size reduction - unused secondary and join indexes, compression, unused columns, wasted space in char datatypes (e.g varchar(1) which used 5 bytes instead of 1 due to the varchar overhead)
+1. Increase the database size from the DBC/owner freespace
+1. Explore table size reduction - unused secondary and join indexes, compression, unused columns, wasted space in char datatypes (e.g varchar(1) which uses 5 bytes instead of 1 due to the varchar overhead)
 1. Increase disk capacity 
 
-[dbsee_tablefallback.sql](https://github.com/VLDB-Solutions/DBSEE/blob/master/dbsee_tablefallback.sql) -- tables with fallback enabled
+**[dbsee_tablefallback.sql]**(https://github.com/VLDB-Solutions/DBSEE/blob/master/dbsee_tablefallback.sql) -- tables with fallback enabled
 
-A check to find any fallback enabled tables, these tables can potentially delay updates. The backup of data is preferred over a fallback as fallback enabled tables take up extra database space and can cause issues with failed inserts and updates.
+This is a check to find any fallback enabled tables; these tables can potentially delay updates. The backup of data is preferred over a fallback, as fallback enabled tables take up extra database space and can cause issues with failed inserts and updates.
 
-[dbsee_tableindexstats.sql](https://github.com/VLDB-Solutions/DBSEE/blob/master/dbsee_tableindexstats.sql) -- tables with missing or old index statistics
+**[dbsee_tableindexstats.sql]**(https://github.com/VLDB-Solutions/DBSEE/blob/master/dbsee_tableindexstats.sql) -- tables with missing or old index statistics
 
-[dbsee_tablemaxpi.sql](https://github.com/VLDB-Solutions/DBSEE/blob/master/dbsee_tablemaxpi.sql) -- tables with 5 or more primary index (PI) columns
+**[dbsee_tablemaxpi.sql]**(https://github.com/VLDB-Solutions/DBSEE/blob/master/dbsee_tablemaxpi.sql) -- tables with 5 or more primary index (PI) columns
 
-[dbsee_tablemultiset.sql](https://github.com/VLDB-Solutions/DBSEE/blob/master/dbsee_tablemultiset.sql) -- multiset tables
+**[dbsee_tablemultiset.sql]**(https://github.com/VLDB-Solutions/DBSEE/blob/master/dbsee_tablemultiset.sql) -- multiset tables
 
-[dbsee_tablenopi.sql](https://github.com/VLDB-Solutions/DBSEE/blob/master/dbsee_tablenopi.sql) -- NOPI tables
+**[dbsee_tablenopi.sql]**(https://github.com/VLDB-Solutions/DBSEE/blob/master/dbsee_tablenopi.sql) -- NOPI tables
 
-[dbsee_tablenullablepi.sql](https://github.com/VLDB-Solutions/DBSEE/blob/master/dbsee_tablenullablepi.sql) -- tables with nullable primary index (PI) columns
+**[dbsee_tablenullablepi.sql]**(https://github.com/VLDB-Solutions/DBSEE/blob/master/dbsee_tablenullablepi.sql) -- tables with nullable primary index (PI) columns
 
-[dbsee_tablepartitions.sql](https://github.com/VLDB-Solutions/DBSEE/blob/master/dbsee_tablepartitions.sql) -- statistics for partitioned tables
+**[dbsee_tablepartitions.sql]**(https://github.com/VLDB-Solutions/DBSEE/blob/master/dbsee_tablepartitions.sql) -- statistics for partitioned tables
 
-[dbsee_tablepidatatype.sql](https://github.com/VLDB-Solutions/DBSEE/blob/master/dbsee_tablepidatatype.sql) -- primary index (PI) datatypes
+**[dbsee_tablepidatatype.sql]**(https://github.com/VLDB-Solutions/DBSEE/blob/master/dbsee_tablepidatatype.sql) -- primary index (PI) datatypes
 
-[dbsee_tableskew.sql](https://github.com/VLDB-Solutions/DBSEE/blob/master/dbsee_tableskew.sql) -- skewed tables
+**[dbsee_tableskew.sql]**(https://github.com/VLDB-Solutions/DBSEE/blob/master/dbsee_tableskew.sql) -- skewed tables
 
-[dbsee_tablestats.sql](https://github.com/VLDB-Solutions/DBSEE/blob/master/dbsee_tablestats.sql) -- tables with missing or old statistics
+**[dbsee_tablestats.sql]**(https://github.com/VLDB-Solutions/DBSEE/blob/master/dbsee_tablestats.sql) -- tables with missing or old statistics
 
-[dbsee_tablewidth.sql](https://github.com/VLDB-Solutions/DBSEE/blob/master/dbsee_tablewidth.sql) -- number of columns per table
+**[dbsee_tablewidth.sql]**(https://github.com/VLDB-Solutions/DBSEE/blob/master/dbsee_tablewidth.sql) -- number of columns per table
 
-[dbsee_unused.sql](https://github.com/VLDB-Solutions/DBSEE/blob/master/dbsee_unused.sql) -- unused database objects
+**[dbsee_unused.sql]**(https://github.com/VLDB-Solutions/DBSEE/blob/master/dbsee_unused.sql) -- unused database objects
 
 ### Contact VLDB
 
