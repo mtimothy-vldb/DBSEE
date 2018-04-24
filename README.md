@@ -65,7 +65,15 @@ The DBSee scripts take between a few seconds to a few minutes each to execute, e
 
 [dbsee_permspace.sql](https://github.com/VLDB-Solutions/DBSEE/blob/master/dbsee_permspace.sql) -- available space within each database
 
+A general rule is to keep the overall percent used below 65%, typically this ensures there is enough free space. If you find the total space used is above the recommended 65% there are a number of options. 
+
+1. Increase the database size from dbc / owner freespace
+1. Explore table size reduction - unused secondary and join indexes, compression, unused columns, wasted space in char datatypes (e.g varchar(1) which used 5 bytes instead of 1 due to the varchar overhead)
+1. Increase disk capacity 
+
 [dbsee_tablefallback.sql](https://github.com/VLDB-Solutions/DBSEE/blob/master/dbsee_tablefallback.sql) -- tables with fallback enabled
+
+A check to find any fallback enabled tables, these tables can potentially delay updates. The backup of data is preferred over a fallback as fallback enabled tables take up extra database space and can cause issues with failed inserts and updates.
 
 [dbsee_tableindexstats.sql](https://github.com/VLDB-Solutions/DBSEE/blob/master/dbsee_tableindexstats.sql) -- tables with missing or old index statistics
 
