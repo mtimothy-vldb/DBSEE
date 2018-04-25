@@ -8,7 +8,7 @@ Our main area of expertise is high-end, [Massively Parallel Processing (MPP)](ht
 
 ![logo](https://vldbsolutions.com/img/VLDB-DBSee.png)
 
-The team at VLDB have been acquiring and modifying Teradata best practice beliefs since 1989.
+The team at VLDB have been developing Teradata best practice beliefs since 1989.
 
 DBSee represents the Teradata best practice beliefs that can be checked for programmatically. DBSee consists of a set of SQL scripts developed by VLDB that run against the Teradata data dictionary. Each script can be used to inform a user of the current state of their Teradata system.
 
