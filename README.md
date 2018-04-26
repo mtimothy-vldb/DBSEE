@@ -73,11 +73,11 @@ This is a check to find any fallback enabled tables; these tables can potentiall
 
 [**dbsee_tableindexstats.sql ▸**](https://github.com/VLDB-Solutions/DBSEE/blob/master/dbsee_tableindexstats.sql) tables with missing or old index statistics
 
-Statistics should always be relevant and collected frequently, especially when the table has volatile data. The query optimiser depends on statistcs to ensure the most efficient join plans are generated. 
+Statistics should always be relevant and collected frequently, especially when the table has volatile data. The query optimiser depends on statistics to ensure the most efficient join plans are generated. 
 
 [**dbsee_tablemaxpi.sql ▸**](https://github.com/VLDB-Solutions/DBSEE/blob/master/dbsee_tablemaxpi.sql) tables with 5 or more primary index (PI) columns
 
-Generally tables should use the smallest number of indexes to get a well distrbuted table. Also, having a large number of PI columns means it may not be used if all of the PI columns are not used in joins.
+Generally, the smallest number of indexes should be used to get a well distributed table. Also, having a large number of PI columns means it may not be used if all of the PI columns are not used in joins.
 
 [**dbsee_tablemultiset.sql ▸**](https://github.com/VLDB-Solutions/DBSEE/blob/master/dbsee_tablemultiset.sql) multiset tables
 
