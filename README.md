@@ -73,11 +73,19 @@ This is a check to find any fallback enabled tables; these tables can potentiall
 
 [**dbsee_tableindexstats.sql ▸**](https://github.com/VLDB-Solutions/DBSEE/blob/master/dbsee_tableindexstats.sql) tables with missing or old index statistics
 
+Statistics should always be relevant and collected frequently, especially when the table has volatile data. The query optimiser depends on statistcs to ensure the most efficient join plans are generated. 
+
 [**dbsee_tablemaxpi.sql ▸**](https://github.com/VLDB-Solutions/DBSEE/blob/master/dbsee_tablemaxpi.sql) tables with 5 or more primary index (PI) columns
+
+Generally tables should use the smallest number of indexes to get a well distrbuted table. Also, having a large number of PI columns means it may not be used if all of the PI columns are not used in joins.
 
 [**dbsee_tablemultiset.sql ▸**](https://github.com/VLDB-Solutions/DBSEE/blob/master/dbsee_tablemultiset.sql) multiset tables
 
+Multiset tables allow duplicate rows. They are ok to use **only** if duplicates are either ok (shouldn't be) or guaranteed to not exist in which case the faster insert times are a bonus over set tables.
+
 [**dbsee_tablenopi.sql ▸**](https://github.com/VLDB-Solutions/DBSEE/blob/master/dbsee_tablenopi.sql) NOPI tables
+
+If these tables are not there by design, then there is a good chance that joins will be inefficient since the data is not distributed by a primary index (PI). 
 
 [**dbsee_tablenullablepi.sql ▸**](https://github.com/VLDB-Solutions/DBSEE/blob/master/dbsee_tablenullablepi.sql) tables with nullable primary index (PI) columns
 
