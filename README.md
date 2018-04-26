@@ -93,11 +93,11 @@ Tables with nullable primary index (PI) columns are never a good idea, and would
 
 [**dbsee_tablepartitions.sql ▸**](https://github.com/VLDB-Solutions/DBSEE/blob/master/dbsee_tablepartitions.sql) statistics for partitioned tables
 
-As with table index statistics, they are required for efficient use of partitions and partition elimination.
+As with table index statistics, these are required for efficient use of partitions and partition elimination.
 
 [**dbsee_tablepidatatype.sql ▸**](https://github.com/VLDB-Solutions/DBSEE/blob/master/dbsee_tablepidatatype.sql) primary index (PI) datatypes
 
-Primary index (PI) columns across different tables should always have the same column description and data type for the same data. This rule should extend to all columns; one name, one datatype for the same data across all tables.
+Primary index (PI) columns across different tables should always have the same column description and data type for the same data. This rule should extend to all columns: one name and one datatype for the same data across all tables.
 
 [**dbsee_tableskew.sql ▸**](https://github.com/VLDB-Solutions/DBSEE/blob/master/dbsee_tableskew.sql) skewed tables
 
