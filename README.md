@@ -77,11 +77,11 @@ Statistics should always be relevant and collected frequently, especially when t
 
 [**dbsee_tablemaxpi.sql ▸**](https://github.com/VLDB-Solutions/DBSEE/blob/master/dbsee_tablemaxpi.sql) tables with 5 or more primary index (PI) columns
 
-Generally, the smallest number of indexes should be used to get a well distributed table. Also, having a large number of PI columns means it may not be used if all of the PI columns are not used in joins.
+Generally, the smallest number of indexes should be used to get a well distributed table. Also, when there is a large number of primary index (PI) columns in a table, the table may not be counted if these columns aren't all used in a join.
 
 [**dbsee_tablemultiset.sql ▸**](https://github.com/VLDB-Solutions/DBSEE/blob/master/dbsee_tablemultiset.sql) multiset tables
 
-Multiset tables allow duplicate rows. They are ok to use **only** if duplicates are either ok (shouldn't be) or guaranteed to not exist in which case the faster insert times are a bonus over set tables.
+Multiset tables allow duplicate rows. These tables are acceptable to use, but only if duplicates are either allowed (which is rare), or guaranteed not to exist. In this case, the faster insert times are preferred over set tables.
 
 [**dbsee_tablenopi.sql ▸**](https://github.com/VLDB-Solutions/DBSEE/blob/master/dbsee_tablenopi.sql) NOPI tables
 
@@ -89,9 +89,15 @@ If these tables are not there by design, then there is a good chance that joins 
 
 [**dbsee_tablenullablepi.sql ▸**](https://github.com/VLDB-Solutions/DBSEE/blob/master/dbsee_tablenullablepi.sql) tables with nullable primary index (PI) columns
 
+Tables with nullable primary index (PI) columns are never a good idea, and would indicate a poor choice of PI. This can also cause the generation of incorrect query results. 
+
 [**dbsee_tablepartitions.sql ▸**](https://github.com/VLDB-Solutions/DBSEE/blob/master/dbsee_tablepartitions.sql) statistics for partitioned tables
 
+As with table index statistics, they are required for efficient use of partitions and partition elimination.
+
 [**dbsee_tablepidatatype.sql ▸**](https://github.com/VLDB-Solutions/DBSEE/blob/master/dbsee_tablepidatatype.sql) primary index (PI) datatypes
+
+Primary index (PI) columns across different tables should always have the same column description and data type for the same data. This rule should extend to all columns; one name, one datatype for the same data across all tables.
 
 [**dbsee_tableskew.sql ▸**](https://github.com/VLDB-Solutions/DBSEE/blob/master/dbsee_tableskew.sql) skewed tables
 
