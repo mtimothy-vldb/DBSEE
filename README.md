@@ -101,19 +101,19 @@ Primary index (PI) columns across different tables should always have the same c
 
 [**dbsee_tableskew.sql ▸**](https://github.com/VLDB-Solutions/DBSEE/blob/master/dbsee_tableskew.sql) skewed tables
 
-This shows incorrect primary index (PI) columns, or extremely common data values within the PI column(s). Skewing results in one amp doing far more work than the others, effectively causing a bottleneck. 
+This shows incorrect primary index (PI) columns, or extremely common data values within the PI column(s). This leads to skewed results; one amp is doing far more work than the others, effectively causing a bottleneck. 
 
 [**dbsee_tablestats.sql ▸**](https://github.com/VLDB-Solutions/DBSEE/blob/master/dbsee_tablestats.sql) tables with missing or old statistics
 
-As mentioned for table index statistics and table partition statistics, having stastistics collected frequently improves system efficiency. 
+As mentioned for table index statistics and table partition statistics, having statistics collected frequently improves system efficiency. 
 
 [**dbsee_tablewidth.sql ▸**](https://github.com/VLDB-Solutions/DBSEE/blob/master/dbsee_tablewidth.sql) number of columns per table
 
-Having a large number of columns can result in slower query execution times, this is due to the large amount of blocks being read for a given number of rows.
+Having a large number of columns can result in slower query execution times; this is due to the large amount of blocks being read for a given number of rows.
 
 [**dbsee_unused.sql ▸**](https://github.com/VLDB-Solutions/DBSEE/blob/master/dbsee_unused.sql) unused database objects
 
-These objects are using up system resources and not yeilding any positive return.
+These objects are using up system resources and not yielding any positive return.
 
 ### Contact VLDB
 
