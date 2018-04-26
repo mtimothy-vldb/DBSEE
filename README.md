@@ -65,7 +65,7 @@ The DBSee scripts take between a few seconds to a few minutes each to execute, e
 
 [**dbsee_permspace.sql ▸**](https://github.com/VLDB-Solutions/DBSEE/blob/master/dbsee_permspace.sql) available space within each database
 
-A general rule is to keep the overall percent used below 65%; typically this ensures that there is enough free space. This also shows the overall space and where it's allocated within the system. 
+A general rule is to keep the overall percent used below 70-75%; typically this ensures that there is enough free space. This also shows the overall space and where it's allocated within the system. 
 
 [**dbsee_tablefallback.sql ▸**](https://github.com/VLDB-Solutions/DBSEE/blob/master/dbsee_tablefallback.sql) tables with fallback enabled
 
